@@ -1,4 +1,5 @@
 <?php
+
 include ('server.php');
 //include ('pagi.php');
 use Ousseynou\Projetcrud\TableHelper;
