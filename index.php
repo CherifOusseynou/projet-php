@@ -1,6 +1,7 @@
 <?php
 
 include ('server.php');
+
 //include ('pagi.php');
 use Ousseynou\Projetcrud\TableHelper;
 
@@ -83,15 +84,15 @@ if (isset($_GET['edit'])){
       <?php endif ?>
 
 <table class="table table-striped ">
-   <thead>
+   <thead> 
       <tr>
-         <th><?= TableHelper::sort('id', "ID", $_GET) ?></th>
-         <th><?= TableHelper::sort('nom', 'Nom', $_GET) ?></th>
-         <th><?= TableHelper::sort('prenom', 'Prenom', $_GET) ?></th>
-         <th><?= TableHelper::sort('annee_de_naissance', 'Annee de naissance', $_GET) ?></th>
-         <th><?= TableHelper::sort('note_en_inf', 'Note en inf', $_GET) ?></th>
-         <th><?= TableHelper::sort('note_en_gestion_projet', 'Note en gestion de projet', $_GET) ?></th>
-         <th colspan="2" >Action</th>
+         <th>ID</th>
+         <th>Nom</th>
+         <th>Prenom</th>
+         <th>Annee de naissance</th>
+         <th>Note en inf</th>
+         <th>Note en gestion de projet</th>
+         <th colspan="2" class="text-center" >Action</th>
       </tr>
    </thead>
    <tbody>
@@ -116,41 +117,7 @@ if (isset($_GET['edit'])){
    </table>
 
 
-   <h1 class="text-center pt-5">Ajouter un étudiant</h1>
-   <form method="post" action="server.php" >
-      <input type="hidden" name="id" value="<?php echo $id; ?> " />
-         <div class="input-group">
-            <label>Nom: </label> 
-            <input type="text" name="nom" value="<?php echo $nom; ?>" />
-         </div>
-         <div class="input-group">
-            <label>Prenom: </label> 
-            <input type="text" name="prenom" value="<?php echo $prenom; ?>"/>
-         </div>
-         <div class="input-group">
-            <label>Annee de naissance: </label>
-            <input type="text" name="annee_de_naissance" value="<?php echo $annee_de_naissance; ?>" />
-         </div>
-         <div class="input-group">
-            <label>Note en gestion de projet: </label>
-            <input type="text" name="note_en_gestion_projet" value="<?php echo $note_en_gestion_projet; ?>"/>
-         </div>
-         <div class="input-group">
-            <label>Note en informatiue: </label>
-            <input type="text" name="note_en_inf" value="<?php echo $note_en_inf; ?>" />
-         </div>
-         
-      </div>
-
-      <div class="input-group">
-         <?php if ($edit_state == false):  ?>
-            <button type="submit" name="save" class="btn btn-danger"> Save </button>
-         <?php else: ?>
-            <button type="submit" name="update" class="btn btn-danger"> Update </button>
-         <?php endif ?>
-
-      </div>
-   </form>
+   
 
    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" ></script>
